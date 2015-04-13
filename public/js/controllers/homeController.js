@@ -7,6 +7,5 @@
     'use strict';
     helloWorldApp.controller('homeController', function homeController($scope){
         $scope.header = 'Hello World...';
-
     });
 }());
