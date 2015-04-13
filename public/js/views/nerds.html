@@ -1,0 +1,11 @@
+<!-- public/views/nerds.html -->
+<div class="jumbotron text-center">
+    <h1>{{ header }}</h1>
+</div>
+<br>
+<table>
+    <tr ng-repeat="n in nerds">
+        <td ng-bind="n.name"></td>
+    </tr>
+</table>
+<pre>{{nerds | json}}</pre>
