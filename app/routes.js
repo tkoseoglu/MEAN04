@@ -89,8 +89,12 @@ module.exports = function (app) {
         nerd1.save(function (err, dbUser) {
 
             if (err) {
+
+                var message = getErrorMessage(err);
+                console.log('Error initializing ' + message);
+
                 return res.status(400).send({
-                    message: getErrorMessage(err)
+                    message: message
                 });
             }
             else {
