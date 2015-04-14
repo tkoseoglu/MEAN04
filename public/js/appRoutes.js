@@ -18,6 +18,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'nerdsController'
         })
 
+        .when('/nerd', {
+            templateUrl: 'js/views/nerd.html',
+            controller: 'nerdController'
+        })
+
         .otherwise({
             redirectTo: '/'
         });

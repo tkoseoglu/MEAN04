@@ -1,0 +1,32 @@
+<!-- public/views/nerds.html -->
+<div class="jumbotron text-center">
+    <h1>{{ header }}</h1>
+</div><br>
+
+<form name="form.inputForm"
+      role="form">
+    <div class="form-group"
+         ng-class="{'has-error': form.inputForm.name.$invalid}">
+        <label class="control-label"
+               for="name">Name</label> <input type="text"
+                                              id="name"
+                                              name="name"
+                                              ng-model="nerd.name"
+                                              class="form-control"
+                                              required>
+    </div>
+
+    <button type="button"
+            class="btn btn-primary"
+            ng-click="saveNerd('Nerd Saved')"
+            ng-disabled="form.inputForm.$invalid || form.inputForm.$pristine || isBusy">
+        <i class="fa fa-spinner fa-spin"
+           ng-show="isBusy"></i><i class="fa fa-save"
+                                   ng-hide="isBusy"></i> Save
+    </button>
+    <a href="/nerds"
+       class="btn btn-default">Cancel</a>
+</form>
+
+
+<pre>{{nerd | json}}</pre>
