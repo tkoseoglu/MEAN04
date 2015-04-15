@@ -6,11 +6,15 @@
     <thead>
     <tr>
         <th>Name</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
     <tr ng-repeat="n in nerds">
         <td ng-bind="n.name"></td>
+        <td>
+            <a ng-href="/#nerd/{{n._id}}" class="btn btn-primary pull-right"><i class="fa fa-pencil"></i></a>
+        </td>
     </tr>
     </tbody>
 </table>

@@ -26,12 +26,10 @@ module.exports = function (app) {
         return message;
     };
 
+    //all
     app.get('/api/nerds', function (req, res) {
         // use mongoose to get all nerds in the database
         Nerd.find(function (err, nerds) {
-
-            // if there is an error retrieving, send the error.
-            // nothing after res.send(err) will execute
             if (err)
                 res.send(err);
 
@@ -39,7 +37,24 @@ module.exports = function (app) {
         });
     });
 
-    app.post('/api/nerds', function (req, res) {
+    //get one
+    app.get('/api/nerd/:id', function (req, res) {
+
+        var id = req.params.id;
+        console.log('Nerd Id ' + id);
+
+        Nerd.findById(id).exec(function (err, nerd) {
+            if (err) {
+                var message = getErrorMessage(err);
+                console.log('Error ' + message);
+                return res.send(message);
+            }
+            res.json(nerd);
+        });
+    });
+
+    //save one
+    app.post('/api/nerd', function (req, res) {
 
         console.log('Nerd Id ' + req.body._id);
         console.log('Nerd Name ' + req.body.name);
@@ -74,6 +89,28 @@ module.exports = function (app) {
         });
     });
 
+    //delete one
+    app.delete('/api/nerd/:id', function (req, res) {
+
+        var id = req.params.id;
+        console.log('Nerd Id to delete ' + id);
+        if(id){
+            Nerd.findOneAndRemove({_id: id}, function (err) {
+                if (err) {
+                    var message = getErrorMessage(err);
+                    console.log('Error ' + message);
+                    return res.send(message);
+                }
+                res.json(true);
+            });
+        }
+        else{
+            res.json('No id provided');
+        }
+
+    });
+
+    //init
     app.get('/api/init', function (req, res) {
 
         console.log('Creating some test nerds');

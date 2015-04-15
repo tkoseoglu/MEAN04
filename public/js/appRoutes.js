@@ -23,11 +23,17 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'nerdController'
         })
 
+        .when('/nerd/:id', {
+            templateUrl: 'js/views/nerd.html',
+            controller: 'nerdController'
+        })
+
         .otherwise({
             redirectTo: '/'
         });
 
-    //with this we don't need to have # in the URL
-    $locationProvider.html5Mode(true);
+    //with this we don't need to have # in the URL. The problem is, page refreshing aren't working. It required
+    //url rewriting on the server side, so...
+    //$locationProvider.html5Mode(true);
 
 }]);

@@ -18,15 +18,38 @@
                         return response.data;
                     });
             },
-            saveNerd: function (vm) {
-                console.time('Saving Nerd');
+            getNerd: function (id) {
+                console.time('Getting Nerd ' + id);
                 return $http({
-                    method: 'POST',
-                    data:vm,
-                    url: '/api/nerds/'
+                    method: 'GET',
+                    url: '/api/nerd/' + id
                 }).
                     then(function (response) {
-                        console.timeEnd('Saving Nerd');
+                        console.timeEnd('Getting Nerd ' + id);
+                        return response.data;
+                    });
+            },
+            saveNerd: function (vm) {
+                console.time('Saving Nerd ' + vm._id);
+                return $http({
+                    method: 'POST',
+                    data: vm,
+                    url: '/api/nerd/'
+                }).
+                    then(function (response) {
+                        console.timeEnd('Saving Nerd ' + vm._id);
+                        return response.data;
+                    });
+            },
+            deleteNerd: function (vm) {
+                console.time('Deleting Nerd ' + vm._id);
+                return $http({
+                    method: 'DELETE',
+                    data: vm,
+                    url: '/api/nerd/' + vm._id
+                }).
+                    then(function (response) {
+                        console.timeEnd('Deleting Nerd ' + vm._id);
                         return response.data;
                     });
             }
