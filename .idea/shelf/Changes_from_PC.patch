@@ -1,0 +1,236 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision ab7aff3cda855f39ac7f83aced6f63693f5fa4b4)
++++ .idea/workspace.xml	(revision )
+@@ -1,8 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="fa4e4615-5eed-41d4-a515-7b581f64dd44" name="Default" comment="Added support to manage a single &quot;Nerd&quot;">
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.js" afterPath="$PROJECT_DIR$/app/routes.js" />
++    <list default="true" id="fa4e4615-5eed-41d4-a515-7b581f64dd44" name="Default" comment="">
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+     </list>
+     <ignored path="MEAN04.iws" />
+@@ -25,7 +24,18 @@
+     <favorites_list name="MEAN04" />
+   </component>
+   <component name="FileEditorManager">
+-    <leaf />
++    <leaf>
++      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
++        <entry file="file://$PROJECT_DIR$/public/index.html">
++          <provider selected="true" editor-type-id="text-editor">
++            <state vertical-scroll-proportion="0.6341853">
++              <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
++              <folding />
++            </state>
++          </provider>
++        </entry>
++      </file>
++    </leaf>
+   </component>
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+@@ -81,10 +91,10 @@
+     <order />
+   </component>
+   <component name="ProjectFrameBounds">
+-    <option name="x" value="213" />
+-    <option name="y" value="67" />
+-    <option name="width" value="1008" />
+-    <option name="height" value="697" />
++    <option name="x" value="54" />
++    <option name="y" value="-8" />
++    <option name="width" value="1874" />
++    <option name="height" value="1096" />
+   </component>
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+     <OptionsSetting value="true" id="Add" />
+@@ -110,6 +120,16 @@
+     </navigator>
+     <panes>
+       <pane id="Scratches" />
++      <pane id="Scope">
++        <subPane subId="Project Files">
++          <PATH>
++            <PATH_ELEMENT USER_OBJECT="Root">
++              <option name="myItemId" value="" />
++              <option name="myItemType" value="" />
++            </PATH_ELEMENT>
++          </PATH>
++        </subPane>
++      </pane>
+       <pane id="ProjectPane">
+         <subPane>
+           <PATH>
+@@ -208,16 +228,6 @@
+           </PATH>
+         </subPane>
+       </pane>
+-      <pane id="Scope">
+-        <subPane subId="Project Files">
+-          <PATH>
+-            <PATH_ELEMENT USER_OBJECT="Root">
+-              <option name="myItemId" value="" />
+-              <option name="myItemType" value="" />
+-            </PATH_ELEMENT>
+-          </PATH>
+-        </subPane>
+-      </pane>
+     </panes>
+   </component>
+   <component name="PropertiesComponent">
+@@ -325,7 +335,13 @@
+       <option name="project" value="LOCAL" />
+       <updated>1428937965913</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="Changes from PC">
++      <created>1429066064181</created>
++      <option name="number" value="00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1429066064181</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TodoView" selected-index="0">
+@@ -349,28 +365,28 @@
+     </todo-panel>
+   </component>
+   <component name="ToolWindowManager">
+-    <frame x="213" y="67" width="1008" height="697" extended-state="0" />
++    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
+     <editor active="false" />
+     <layout>
+-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3814147" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
++      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2875817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19989106" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
++      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
++      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28769842" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
++      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2750533" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
++      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19989106" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
++      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3814147" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2754777" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
++      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
++      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
++      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
++      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
++      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+     </layout>
+   </component>
+   <component name="UnknownFeatures">
+@@ -392,7 +408,8 @@
+     <MESSAGE value="Initial commit" />
+     <MESSAGE value="Changed homeController to test 'git commit'" />
+     <MESSAGE value="Added support to manage a single &quot;Nerd&quot;" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Added support to manage a single &quot;Nerd&quot;" />
++    <MESSAGE value="Changes from PC" />
++    <option name="LAST_COMMIT_MESSAGE" value="Changes from PC" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager />
+@@ -662,7 +679,6 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.225">
+           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+-          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -690,13 +706,6 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/ide/ide-scripting.scpt">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0">
+-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/bower.json">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="-6.25">
+@@ -715,18 +724,9 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0">
+           <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+-          <folding />
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/public/index.html">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0">
+-          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+-          <folding />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/app/routes.js">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.0">
+@@ -735,27 +735,10 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file:///usr/local/etc/mongod.conf">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.1779661">
+-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+-          <folding />
+-        </state>
+-      </provider>
+-    </entry>
+-    <entry file="file:///data/mongod.conf">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state vertical-scroll-proportion="0.0">
+-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+-          <folding />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/help.txt">
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.125">
+           <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+-          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -763,6 +746,13 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state vertical-scroll-proportion="0.05">
+           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/public/index.html">
++      <provider selected="true" editor-type-id="text-editor">
++        <state vertical-scroll-proportion="0.6341853">
++          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+           <folding />
+         </state>
+       </provider>
+\ No newline at end of file
