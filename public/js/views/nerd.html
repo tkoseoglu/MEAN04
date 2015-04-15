@@ -18,7 +18,7 @@
 
     <button type="button"
             class="btn btn-primary"
-            ng-click="saveNerd('Nerd Saved')"
+            ng-click="saveNerd()"
             ng-disabled="form.inputForm.$invalid || form.inputForm.$pristine || isBusy">
         <i class="fa fa-spinner fa-spin"
            ng-show="isBusy"></i><i class="fa fa-save"
@@ -28,5 +28,6 @@
        class="btn btn-default">Cancel</a>
 </form>
 
+<br/>
 
 <pre>{{nerd | json}}</pre>

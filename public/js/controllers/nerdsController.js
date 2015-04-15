@@ -9,9 +9,8 @@
         $scope.nerds=[];
 
         nerdService.getNerds().then(function(results){
-
             $scope.nerds = results;
-
         });
+
     });
 }());

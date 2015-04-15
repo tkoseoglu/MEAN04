@@ -41,41 +41,37 @@ module.exports = function (app) {
 
     app.post('/api/nerds', function (req, res) {
 
-        var userContext = req.user;
-        console.log('Save; Current Context ' + userContext);
+        console.log('Nerd Id ' + req.body._id);
+        console.log('Nerd Name ' + req.body.name);
 
-        var uiId = req.body._id;
+        Nerd.findOne({_id: req.body._id}, function (err, dbNerd) {
 
-        if (userContext && uiId) {
+            if (err) {
+                var message = getErrorMessage(err);
+                console.log('Error ' + message);
+                return res.send(message);
+            }
+            else if (!dbNerd) {
+                //user with uiUsername not found. Let's create a new user.
+                console.log('Creating new Nerd');
+                dbNerd = new Nerd();
+                dbNerd.dateCreated = Date.now();
+            }
 
-            Nerd.findOne({_id: uiId}, function (err, dbNerd) {
+            dbNerd.name = req.body.name;
+            dbNerd.dateModified = Date.now();
 
+            dbNerd.save(function (err, user) {
                 if (err) {
-                    return res.send(getErrorMessage(err));
+                    var message = getErrorMessage(err);
+                    console.log('Nerd saved error ' + message);
+                    return res.send(message);
+                } else {
+                    console.log('Nerd saved');
+                    res.send(true);
                 }
-                else if (!dbNerd) {
-                    //user with uiUsername not found. Let's create a new user.
-                    dbNerd = new Nerd();
-                    dbNerd.dateCreated = Date.now();
-                }
-
-                dbNerd.name = req.body.name;
-                dbNerd.dateModified = Date.now();
-
-                dbNerd.save(function (err, user) {
-                    if (err) {
-                        return res.send(getErrorMessage(err));
-                    } else {
-                        res.send(true);
-                    }
-                });
-
             });
-        }
-        else {
-            console.log('User session invalid or expired');
-            return res.send(false);
-        }
+        });
     });
 
     app.get('/api/init', function (req, res) {

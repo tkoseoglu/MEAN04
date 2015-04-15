@@ -14,10 +14,14 @@
 
         $scope.saveNerd = function () {
             $scope.isBusy = true;
-
-            nerdService.saveNerd($scope.nerd).then(function(result){
-
+            nerdService.saveNerd($scope.nerd).then(function (result) {
                 $scope.isBusy = false;
+                if (result === true)
+                    toastr.success("Ok!", 'Save');
+                else
+                    toastr.error(result, 'Save');
+
+                $scope.nerd={};
             });
 
         };
