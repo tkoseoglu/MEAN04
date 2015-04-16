@@ -28,6 +28,22 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'personController'
         })
 
+        // nerds page that will use the NerdController
+        .when('/courses', {
+            templateUrl: 'js/views/courses.html',
+            controller: 'coursesController'
+        })
+
+        .when('/course', {
+            templateUrl: 'js/views/course.html',
+            controller: 'courseController'
+        })
+
+        .when('/course/:id', {
+            templateUrl: 'js/views/course.html',
+            controller: 'courseController'
+        })
+
         .otherwise({
             redirectTo: '/'
         });

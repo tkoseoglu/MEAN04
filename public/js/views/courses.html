@@ -1,0 +1,41 @@
+<!-- public/views/courses.html -->
+<div class="row">
+    <div class="col-sm-6">
+        <h3>{{header}}</h3>
+</div>
+    <div class="col-sm-6">
+        <a href="/#course"
+           class="btn btn-primary pull-right"><i class="fa fa-plus"></i> New Course</a>
+    </div>
+</div>
+<br/>
+
+
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Start</th>
+        <th>End</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="c in courses">
+        <td ng-bind="c.courseName"></td>
+        <td ng-bind="c.description"></td>
+        <td ng-bind="c.startTime"></td>
+        <td ng-bind="c.endTime"></td>
+        <td>
+            <a ng-href="/#course/{{p._id}}"
+               class="btn btn-primary pull-right"><i class="fa fa-pencil"></i></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<br/>
+
+<pre>{{courses | json}}</pre>

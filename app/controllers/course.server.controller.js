@@ -1,7 +1,7 @@
 /**
  * Created by Kemal on 04/15/15.
  */
-var Person = require('./../models/person');
+var Course = require('./../models/course');
 
 var getErrorMessage = function (err) {
     var message = '';
@@ -26,57 +26,56 @@ var getErrorMessage = function (err) {
 
 exports.getAll = function(req,res){
     // use mongoose to get all nerds in the database
-    Person.find(function (err, persons) {
+    Course.find(function (err, courses) {
         if (err)
             res.send(err);
-        res.json(persons); // return all nerds in JSON format
+        res.json(courses); // return all nerds in JSON format
     });
 };
 
 exports.getOne = function(req,res){
     var id = req.params.id;
-    console.log('Person Id ' + id);
+    console.log('Class Id ' + id);
 
-    Person.findById(id).exec(function (err, person) {
+    Course.findById(id).exec(function (err, dbCourse) {
         if (err) {
             var message = getErrorMessage(err);
             console.log('Error ' + message);
             return res.send(message);
         }
-        res.json(person);
+        res.json(dbCourse);
     });
 };
 
 exports.save = function(req,res){
-    console.log('Person Id ' + req.body._id);
-    console.log('Person Name ' + req.body.fullName);
+    console.log('Course Id ' + req.body._id);
+    console.log('Course Name ' + req.body.className);
 
-    Person.findOne({_id: req.body._id}, function (err, dbPerson) {
+    Course.findOne({_id: req.body._id}, function (err, dbCourse) {
 
         if (err) {
             var message = getErrorMessage(err);
             console.log('Error ' + message);
             return res.send(message);
         }
-        else if (!dbPerson) {
+        else if (!dbCourse) {
             //user with uiUsername not found. Let's create a new user.
             console.log('Creating new Person');
-            dbPerson = new Person();
-            dbPerson.dateCreated = Date.now();
+            dbCourse = new Course();
+            dbCourse.dateCreated = Date.now();
         }
 
-        dbPerson.fullName = req.body.fullName;
-        dbPerson.phoneNumber = req.body.phoneNumber;
-        dbPerson.email = req.body.email;
-        dbPerson.dateModified = Date.now();
+        dbCourse.fullName = req.body.className;
+        dbCourse.description = req.body.description;
+        dbCourse.dateModified = Date.now();
 
-        dbPerson.save(function (err, person) {
+        dbCourse.save(function (err, course) {
             if (err) {
                 var message = getErrorMessage(err);
-                console.log('Person save error ' + message);
+                console.log('Course save error ' + message);
                 return res.send(message);
             } else {
-                console.log('Person saved');
+                console.log('Course saved');
                 res.send(true);
             }
         });
@@ -85,9 +84,9 @@ exports.save = function(req,res){
 
 exports.delete = function(req,res){
     var id = req.params.id;
-    console.log('Person Id to delete ' + id);
+    console.log('Course Id to delete ' + id);
     if (id) {
-        Person.findOneAndRemove({_id: id}, function (err) {
+        Course.findOneAndRemove({_id: id}, function (err) {
             if (err) {
                 var message = getErrorMessage(err);
                 console.log('Error ' + message);

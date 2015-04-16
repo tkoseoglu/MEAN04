@@ -63,7 +63,9 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
 
 // routes ==================================================
-require('./app/routes/person.server.routes.js')(app); // configure our routes
+require('./app/routes/person.server.routes.js')(app);
+require('./app/routes/course.server.routes.js')(app);
+require('./app/routes/server.init.routes.js')(app);
 
 // start app ===============================================
 // startup our app at http://localhost:8080

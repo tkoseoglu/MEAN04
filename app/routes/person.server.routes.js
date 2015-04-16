@@ -1,13 +1,11 @@
 // app/routes.js
 var person = require('../controllers/person.server.controller.js');
-// grab the nerd model we just created
-
 
 module.exports = function (app) {
 
     //all
     app.route('/api/people')
-        .get(person.getPeople);
+        .get(person.getAll);
 
     //get one
     app.route('/api/person/:id')
@@ -21,8 +19,5 @@ module.exports = function (app) {
     app.route('/api/person/:id')
         .delete(person.delete);
 
-    //init
-    app.route('/api/init')
-        .get(person.initialize);
 
 };
