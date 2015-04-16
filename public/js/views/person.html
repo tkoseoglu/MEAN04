@@ -39,6 +39,13 @@
                                                 class="form-control"
                                                 required>
     </div>
+    <div class="form-group"
+         ng-class="{'has-error': form.inputForm.email.$invalid}">
+        <label class="checkbox-column"
+               ng-repeat="c in courses"> <input type="checkbox"
+                                               checklist-model="person.courses"
+                                               checklist-value="c._id"> {{c.courseName}} </label>
+    </div>
     <br/>
     <button type="submit"
             class="btn btn-primary"
@@ -64,3 +71,4 @@
 <br/>
 
 <pre>{{person | json}}</pre>
+<pre>{{courses | json}}</pre>

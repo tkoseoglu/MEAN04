@@ -1,8 +1,8 @@
 // grab the mongoose module
 var mongoose = require('mongoose');
 
-// module.exports allows us to pass this to other files when it is called
-module.exports = mongoose.model('Person', {
+
+var PersonSchema = new mongoose.Schema({
     fullName: {
         type: String,
         default: '',
@@ -10,9 +10,15 @@ module.exports = mongoose.model('Person', {
     },
     phoneNumber: String,
     email: String,
+    courses:[{
+        type: mongoose.Schema.ObjectId,
+        ref: 'Course'
+    }],
     dateModified: Date,
     dateCreated: {
         type: Date,
         default: Date.now
     }
 });
+
+module.exports = mongoose.model('Person', PersonSchema);

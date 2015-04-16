@@ -4,13 +4,14 @@
 // public/js/controllers/personController.js
 (function () {
     'use strict';
-    helloWorldApp.controller('personController', function personController($scope, $routeParams, $location, personService) {
+    helloWorldApp.controller('personController', function personController($scope, $routeParams, $location, personService, courseService) {
         $scope.header = 'New Person';
         $scope.person = {
             fullName: '',
             phoneNumber: '',
             email: ''
         };
+        $scope.courses=[];
         $scope.form = {};
         $scope.isBusy = false;
 
@@ -22,6 +23,10 @@
                 $scope.header = 'Edit ' + $scope.person.fullName;
             });
         }
+
+        courseService.getAll().then(function(results){
+            $scope.courses = results;
+        });
 
         $scope.save = function () {
             $scope.isBusy = true;

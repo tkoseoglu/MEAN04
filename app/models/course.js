@@ -1,11 +1,10 @@
 /**
  * Created by Kemal on 04/15/15.
  */
-// grab the mongoose module
 var mongoose = require('mongoose');
 
-// module.exports allows us to pass this to other files when it is called
-module.exports = mongoose.model('Course', {
+
+var CourseSchema = new mongoose.Schema({
     courseName: {
         type: String,
         default: '',
@@ -14,10 +13,15 @@ module.exports = mongoose.model('Course', {
     description: String,
     startTime: String,
     endTime: String,
-
+    people:[{
+        type: mongoose.Schema.ObjectId,
+        ref: 'Person'
+    }],
     dateModified: Date,
     dateCreated: {
         type: Date,
         default: Date.now
     }
 });
+
+module.exports = mongoose.model('Course', CourseSchema);

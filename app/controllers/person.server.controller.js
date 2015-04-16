@@ -1,7 +1,8 @@
 /**
  * Created by Kemal on 04/15/15.
  */
-var Person = require('./../models/person');
+var Person = require('./../models/person'),
+    Course = require('./../models/course');
 
 var getErrorMessage = function (err) {
     var message = '';
@@ -24,7 +25,7 @@ var getErrorMessage = function (err) {
     return message;
 };
 
-exports.getAll = function(req,res){
+exports.getAll = function (req, res) {
     // use mongoose to get all nerds in the database
     Person.find(function (err, persons) {
         if (err)
@@ -33,7 +34,7 @@ exports.getAll = function(req,res){
     });
 };
 
-exports.getOne = function(req,res){
+exports.getOne = function (req, res) {
     var id = req.params.id;
     console.log('Person Id ' + id);
 
@@ -47,7 +48,7 @@ exports.getOne = function(req,res){
     });
 };
 
-exports.save = function(req,res){
+exports.save = function (req, res) {
     console.log('Person Id ' + req.body._id);
     console.log('Person Name ' + req.body.fullName);
 
@@ -68,6 +69,7 @@ exports.save = function(req,res){
         dbPerson.fullName = req.body.fullName;
         dbPerson.phoneNumber = req.body.phoneNumber;
         dbPerson.email = req.body.email;
+        dbPerson.courses = req.body.courses;
         dbPerson.dateModified = Date.now();
 
         dbPerson.save(function (err, person) {
@@ -76,6 +78,43 @@ exports.save = function(req,res){
                 console.log('Person save error ' + message);
                 return res.send(message);
             } else {
+
+                console.log('Person courses ' + person.courses.length);
+                console.log('Person Id ' + person._id);
+
+                Course.find(function (err, dbCourses) {
+
+                    var courseCounter = 0;
+                    var courseCount = dbCourses.length;
+                    dbCourses.forEach(function (dbCourse) {
+                        courseCounter++;
+                        console.log('=========================================');
+                        console.log('Checking course ' + dbCourse.courseName);
+                        console.log('Course people ' + dbCourse.people.length);
+
+                        var personCursesIndex = person.courses.indexOf(dbCourse._id);
+                        var coursePeopleIndex = dbCourse.people.indexOf(person._id);
+
+                        if (personCursesIndex >= 0 && coursePeopleIndex === -1) {
+                            console.log('Add person');
+                            dbCourse.people.push(person);
+                        }
+                        else if (personCursesIndex === -1 && coursePeopleIndex >= 0) {
+                            console.log('Remove person');
+                            dbCourse.people.pull(person);
+                        }
+
+                        dbCourse.save(function (err, course) {
+                            console.log('Course saved');
+                            //if (courseCounter === courseCount){
+                            //    console.log('Returning...');
+                            //    res.send(true);
+                            //}
+                        });
+                        console.log('=========================================');
+                    });
+                });
+
                 console.log('Person saved');
                 res.send(true);
             }
@@ -83,7 +122,7 @@ exports.save = function(req,res){
     });
 };
 
-exports.delete = function(req,res){
+exports.delete = function (req, res) {
     var id = req.params.id;
     console.log('Person Id to delete ' + id);
     if (id) {
