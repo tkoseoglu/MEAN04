@@ -1,15 +1,15 @@
-// app/models/nerd.js
 // grab the mongoose module
 var mongoose = require('mongoose');
 
-// define our nerd model
 // module.exports allows us to pass this to other files when it is called
-module.exports = mongoose.model('Nerd', {
-    name: {
+module.exports = mongoose.model('Person', {
+    fullName: {
         type: String,
         default: '',
-        required: 'Name is required'
+        required: 'Full Name is required'
     },
+    phoneNumber: String,
+    email: String,
     dateModified: Date,
     dateCreated: {
         type: Date,

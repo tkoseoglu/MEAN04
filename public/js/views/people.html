@@ -1,0 +1,39 @@
+<!-- public/views/people.html -->
+<div class="row">
+    <div class="col-sm-6">
+        {{header}}
+    </div>
+    <div class="col-sm-6">
+        <a href="/#person"
+           class="btn btn-primary pull-right"><i class="fa fa-plus"></i> New Person</a>
+    </div>
+</div>
+<br/>
+
+
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="p in people">
+        <td ng-bind="p.fullName"></td>
+        <td ng-bind="p.phoneNumber"></td>
+        <td ng-bind="p.email"></td>
+        <td>
+            <a ng-href="/#person/{{p._id}}"
+               class="btn btn-primary pull-right"><i class="fa fa-pencil"></i></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<br/>
+
+<pre>{{people | json}}</pre>

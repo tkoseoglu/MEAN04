@@ -13,19 +13,19 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         })
 
         // nerds page that will use the NerdController
-        .when('/nerds', {
-            templateUrl: 'js/views/nerds.html',
-            controller: 'nerdsController'
+        .when('/people', {
+            templateUrl: 'js/views/people.html',
+            controller: 'peopleController'
         })
 
-        .when('/nerd', {
-            templateUrl: 'js/views/nerd.html',
-            controller: 'nerdController'
+        .when('/person', {
+            templateUrl: 'js/views/person.html',
+            controller: 'personController'
         })
 
-        .when('/nerd/:id', {
-            templateUrl: 'js/views/nerd.html',
-            controller: 'nerdController'
+        .when('/person/:id', {
+            templateUrl: 'js/views/person.html',
+            controller: 'personController'
         })
 
         .otherwise({

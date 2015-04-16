@@ -1,0 +1,66 @@
+<!-- public/views/people.html -->
+<div class="row">
+    <div class="col-sm-6">
+        <h3>{{header}}</h3>
+    </div>
+    <div class="col-sm-6">
+
+    </div>
+</div><br/>
+<form name="form.inputForm"
+      role="form">
+    <div class="form-group"
+         ng-class="{'has-error': form.inputForm.fullName.$invalid}">
+        <label class="control-label"
+               for="fullName">Full Name</label> <input type="text"
+                                                       id="fullName"
+                                                       name="fullName"
+                                                       ng-model="person.fullName"
+                                                       class="form-control"
+                                                       required>
+    </div>
+    <div class="form-group"
+         ng-class="{'has-error': form.inputForm.phoneNumber.$invalid}">
+        <label class="control-label"
+               for="phoneNumber">Phone Number</label> <input type="text"
+                                                             id="phoneNumber"
+                                                             name="phoneNumber"
+                                                             ng-model="person.phoneNumber"
+                                                             class="form-control"
+                                                             required>
+    </div>
+    <div class="form-group"
+         ng-class="{'has-error': form.inputForm.email.$invalid}">
+        <label class="control-label"
+               for="email">Email</label> <input type="text"
+                                                id="email"
+                                                name="email"
+                                                ng-model="person.email"
+                                                class="form-control"
+                                                required>
+    </div>
+    <br/>
+    <button type="submit"
+            class="btn btn-primary"
+            ng-click="save()"
+            ng-disabled="form.inputForm.$invalid || form.inputForm.$pristine || isBusy">
+        <i class="fa fa-spinner fa-spin"
+           ng-show="isBusy"></i><i class="fa fa-save"
+                                   ng-hide="isBusy"></i> Save
+    </button>
+    <a href="/#people"
+       class="btn btn-default">Cancel</a>
+    <button type="button"
+            class="btn btn-danger pull-right"
+            ng-click="delete()"
+            ng-show="person._id"
+            ng-disabled="isBusy">
+        <i class="fa fa-spinner fa-spin"
+           ng-show="isBusy"></i><i class="fa fa-remove"
+                                   ng-hide="isBusy"></i> Delete
+    </button>
+</form>
+
+<br/>
+
+<pre>{{person | json}}</pre>

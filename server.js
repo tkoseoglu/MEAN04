@@ -1,7 +1,7 @@
 //- app
 //----- models/
-//---------- nerd.js <!-- the nerd model to handle CRUD -->
-//----- routes.js
+//---------- person.js <!-- the nerd model to handle CRUD -->
+//----- person.server.routes.js
 //- config
 //----- db.js
 //- node_modules <!-- created by npm install -->
@@ -12,7 +12,7 @@
 //---------- services <!-- angular services -->
     //----- views
     //---------- home.html
-    //---------- nerds.html
+    //---------- people.html
     //---------- geek.html
 //---------- app.js <!-- angular application -->
 //---------- appRoutes.js <!-- angular routes -->
@@ -63,7 +63,7 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
 
 // routes ==================================================
-require('./app/routes')(app); // configure our routes
+require('./app/routes/person.server.routes.js')(app); // configure our routes
 
 // start app ===============================================
 // startup our app at http://localhost:8080

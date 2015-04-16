@@ -1,55 +1,55 @@
 /**
  * Created by Kemal on 02/03/15.
  */
-// public/js/services/nerdService.js
+// public/js/services/personService.js
 
 (function () {
     'use strict';
-    helloWorldApp.factory('nerdService', function ($http, $log, $q) {
+    helloWorldApp.factory('personService', function ($http, $log, $q) {
         return {
-            getNerds: function () {
-                console.time('Getting Nerds');
+            getAll: function () {
+                console.time('Getting People');
                 return $http({
                     method: 'GET',
-                    url: '/api/nerds'
+                    url: '/api/people'
                 }).
                     then(function (response) {
-                        console.timeEnd('Getting Nerds');
+                        console.timeEnd('Getting People');
                         return response.data;
                     });
             },
-            getNerd: function (id) {
-                console.time('Getting Nerd ' + id);
+            get: function (id) {
+                console.time('Getting Person ' + id);
                 return $http({
                     method: 'GET',
-                    url: '/api/nerd/' + id
+                    url: '/api/person/' + id
                 }).
                     then(function (response) {
-                        console.timeEnd('Getting Nerd ' + id);
+                        console.timeEnd('Getting Person ' + id);
                         return response.data;
                     });
             },
-            saveNerd: function (vm) {
-                console.time('Saving Nerd ' + vm._id);
+            save: function (vm) {
+                console.time('Saving Person ' + vm._id);
                 return $http({
                     method: 'POST',
                     data: vm,
-                    url: '/api/nerd/'
+                    url: '/api/person/'
                 }).
                     then(function (response) {
-                        console.timeEnd('Saving Nerd ' + vm._id);
+                        console.timeEnd('Saving Person ' + vm._id);
                         return response.data;
                     });
             },
-            deleteNerd: function (vm) {
-                console.time('Deleting Nerd ' + vm._id);
+            delete: function (vm) {
+                console.time('Deleting Person ' + vm._id);
                 return $http({
                     method: 'DELETE',
                     data: vm,
-                    url: '/api/nerd/' + vm._id
+                    url: '/api/person/' + vm._id
                 }).
                     then(function (response) {
-                        console.timeEnd('Deleting Nerd ' + vm._id);
+                        console.timeEnd('Deleting Person ' + vm._id);
                         return response.data;
                     });
             }
